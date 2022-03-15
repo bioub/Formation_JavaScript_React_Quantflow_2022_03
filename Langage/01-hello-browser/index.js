@@ -1,4 +1,4 @@
-import { hello } from './hello.js';
+import { hello } from "./hello.js";
 
 const prenoms = ['Romain', 'Jean', 'Eric'];
 

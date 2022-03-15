@@ -18,14 +18,14 @@ function externe(msg) {
 }
 
 const maFonction = externe('Bonjour');
-maFonction();
+maFonction(); // Bonjour
 
 const monAutreFonction = externe('Hello');
-monAutreFonction();
-monAutreFonction();
-monAutreFonction();
+monAutreFonction(); // Hello
+monAutreFonction(); // Hello
+monAutreFonction(); // Hello
 
-maFonction();
+maFonction(); // Bonjour
 // pile d'appel
 // ^
 // |

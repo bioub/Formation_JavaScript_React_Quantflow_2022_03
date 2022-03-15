@@ -55,7 +55,7 @@ Math.random = random;
 // object literal
 // pour des objets mono-instance
 // ou multi-instance sans méthode
-const MyMath = {
+globalThis.MyMath = {
   sum: function(a, b) {
     return Number(a) + Number(b);
   }
@@ -64,26 +64,36 @@ const MyMath = {
 const coords1 = {
   x: 1,
   y: 2,
-  getValues: function() {
-    return {
-      x: this.x,
-      y: this.y,
-    }
-  }
+  // getValues: function() {
+  //   return {
+  //     x: this.x,
+  //     y: this.y,
+  //   }
+  // }
 };
 
 const coords2 = {
   x: 1,
   y: 2,
-  getValues: function() {
-    return {
-      x: this.x,
-      y: this.y,
-    }
-  }
+  // getValues: function() {
+  //   return {
+  //     x: this.x,
+  //     y: this.y,
+  //   }
+  // }
 };
 
-console.log(coords1.getValues === coords2.getValues); // false (donc 2 fonctions en mémoire)
+// console.log(coords1.x);
+// console.log(coords1['x']);
+// const key = 'x';
+// console.log(coords1[key.toLowerCase()]);
+
+// const coords3 = {
+//   ['z'.toUpperCase()]: 3,
+// }
+// coords['z'.toUpperCase()] =
+
+// console.log(coords1.getValues === coords2.getValues); // false (donc 2 fonctions en mémoire)
 
 // constructor (fonction constructeur)
 // multi-instance avec méthode
@@ -104,3 +114,5 @@ const coordsB = new Coords(3, 4);
 delete coordsA.x;
 console.log(coordsA.getValues());
 console.log(coordsA.getValues === coordsB.getValues); // true (donc 1 fonction en mémoire)
+
+
