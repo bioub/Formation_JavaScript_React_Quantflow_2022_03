@@ -1,4 +1,4 @@
-import { createTodoRow } from "./todos.js";
+import { createTodoRow } from './todos.js';
 
 /** @type {HTMLFormElement} */
 const formEl = document.querySelector('.form');
@@ -41,4 +41,4 @@ toggleEl.addEventListener('click', () => {
   for (const checkboxEl of checkboxEls) {
     checkboxEl.checked = toggleEl.checked;
   }
-})
+});
