@@ -17,11 +17,21 @@ export function createTodoRow(options) {
   divEl.className = 'todo';
   divEl.dataset.todoId = options.id;
 
+  const inputEl = document.createElement('input');
+  inputEl.type = 'checkbox';
+  inputEl.className = 'completed';
+  inputEl.checked = options.completed;
+  divEl.append(inputEl);
+
   const spanEl = document.createElement('span');
   spanEl.className = 'title';
   spanEl.innerText = options.title;
-
   divEl.append(spanEl);
+
+  const buttonEl = document.createElement('button');
+  buttonEl.className = 'delete';
+  buttonEl.innerText = '-';
+  divEl.append(buttonEl);
 
   return divEl;
 }
