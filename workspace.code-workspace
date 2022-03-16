@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "TodoDOM"
+		},
+		{
+			"path": "hello-react"
 		}
 	],
 	"settings": {}
