@@ -1,4 +1,4 @@
-import { createTodoRow } from './todos.js';
+// import { createTodoRow } from './todos.js';
 
 /** @type {HTMLFormElement} */
 const formEl = document.querySelector('.form');
@@ -15,13 +15,15 @@ const toggleEl = formEl.querySelector('.toggle');
 formEl.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const todoEl = createTodoRow({
-    id: Math.random(),
-    title: inputEl.value,
-    completed: false,
-  });
+  import('./todos').then(({ createTodoRow }) => {
+    const todoEl = createTodoRow({
+      id: Math.random(),
+      title: inputEl.value,
+      completed: false,
+    });
 
-  listEl.prepend(todoEl);
+    listEl.prepend(todoEl);
+  })
 });
 
 listEl.addEventListener('click', (event) => {

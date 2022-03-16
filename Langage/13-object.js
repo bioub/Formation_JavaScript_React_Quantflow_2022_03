@@ -109,10 +109,50 @@ Coords.prototype.getValues = function() {
   }
 }
 
+Coords.prototype.getValues = function() {
+  return {
+    x: this.x,
+    y: this.y,
+  }
+}
+
+// Object.defineProperty(Coords.prototype, 'getValues', {
+//   value: function() {
+//     return {
+//       x: this.x,
+//       y: this.y,
+//     }
+//   }
+// });
+
+
 const coordsA = new Coords(1, 2);
 const coordsB = new Coords(3, 4);
-delete coordsA.x;
+// delete coordsA.x;
 console.log(coordsA.getValues());
 console.log(coordsA.getValues === coordsB.getValues); // true (donc 1 fonction en mémoire)
 
 
+console.log(coordsA instanceof Coords); // true
+console.log(coordsA instanceof Object); // true
+
+console.log('coordsA.x !== undefined', coordsA.x !== undefined); // true
+console.log('coordsA.getValues !== undefined', coordsA.getValues !== undefined); // true
+
+console.log("'x' in coordsA", 'x' in coordsA); // true
+console.log("'getValues' in coordsA", 'getValues' in coordsA); // true
+
+console.log("coordsA.hasOwnProperty('x')", coordsA.hasOwnProperty('x')); // true
+console.log("coordsA.hasOwnProperty('getValues')", coordsA.hasOwnProperty('getValues')); // false
+
+// for (const key in coordsA) {
+//   if (Object.hasOwnProperty.call(coordsA, key)) {
+//     const value = coordsA[key];
+//     console.log(key, value);
+//   }
+// }
+
+// Boucle moderne sur les clés/valeurs d'un objet
+for (const [key, value] of Object.entries(Coords.prototype)) {
+  console.log(key, value);
+}

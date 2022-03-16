@@ -27,7 +27,7 @@ console.log(multiply(...nbs));
 const shallowCloneNbs = [...nbs];
 
 // changements immuables
-const newNbs = [...nbs, 5]
+const newNbs = [...nbs, 5]; // équivalent à .push en version immuable
 
 // destructurer
 // const trois = nbs[0];
@@ -99,3 +99,5 @@ class Coords3d extends Coords2d {
 Coords2d.getType()
 const coords2d = new Coords2d(1, 2);
 coords2d.getValues();
+
+
