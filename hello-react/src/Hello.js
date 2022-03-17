@@ -43,7 +43,7 @@
 function Hello({ name = 'Romain', age = 36, isTrainer = false }) {
   return (
     <div className="Hello">
-      Hello <span id="prenom">{name}</span>
+      Hello <span className="selected">{name}</span>
     </div>
   );
 }

@@ -1,0 +1,29 @@
+// @import './variables';
+
+// $borderColor: black !default;
+
+// .host {
+//   user-select: none;
+// }
+
+// .selected {
+//   border: 1px solid $borderColor;
+// }
+
+// .menu {
+//   border: 1px solid $borderColor;
+// }
+
+
+.host {
+  user-select: none;
+}
+
+.selected {
+  border: 1px solid var(--bg-color, black);
+}
+
+.menu {
+  border: 1px solid var(--bg-color, black)
+}
+
