@@ -62,12 +62,6 @@ function ClockHooks({ format = 'HH:mm:ss', delay = 1000 }) {
   //   }
   // }, [format]);
 
-  const now = useClock();
-
-  return <div className="Clock">{formatDate(now, format)}</div>;
-}
-
-function useClock() {
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
@@ -79,7 +73,7 @@ function useClock() {
     };
   }, [delay]);
 
-  return now;
+  return <div className="Clock">{formatDate(now, format)}</div>;
 }
 
 export default ClockHooks;
