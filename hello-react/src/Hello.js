@@ -40,7 +40,7 @@
 //   );
 // }
 
-function Hello({ name = 'Romain' }) {
+function Hello({ name = 'Romain', age = 36, isTrainer = false }) {
   return (
     <div className="Hello">
       Hello <span id="prenom">{name}</span>

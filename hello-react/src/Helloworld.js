@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 
 class Helloworld extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+  state = {
+    name: 'Romain'
+  };
+  handleChange = (event) => {
+    /** @type {HTMLInputElement} */
+    const target = event.target;
+
+    this.setState({
+      name: target.value,
+    });
+  };
   render() {
-    const {} = this.state;
+    const { name } = this.state;
     return (
       <div className="Helloworld">
         <label>Name:</label>
-        <input type="text" value="LE_NOM_A_AFFICHER" />
+        <input type="text" value={name} onChange={this.handleChange} />
         <hr />
-        <h1>Hello LE_NOM_A_AFFICHER!</h1>
+        <h1>Hello {name}!</h1>
       </div>
     );
   }
