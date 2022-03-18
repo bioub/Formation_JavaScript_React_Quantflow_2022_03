@@ -9,3 +9,6 @@ export const addTodo = createAction('ADD_TODO', (title) => ({
   payload: { id: nanoid(), title, completed: false },
 }));
 export const setNewTodo = createAction('SET_NEW_TODO');
+
+export const deleteTodo = createAction('DELETE_TOTO');
+export const toggleTodos = createAction('TOGGLE_TODOS');

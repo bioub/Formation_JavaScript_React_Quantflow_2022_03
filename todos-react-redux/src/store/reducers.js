@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { addTodo, fetchTodos, fetchTodosSuccess, increment, setNewTodo } from './actions'
+import { addTodo, deleteTodo, fetchTodos, fetchTodosSuccess, increment, setNewTodo, toggleTodos } from './actions'
 
 const initialState = {
   counter: {
@@ -35,6 +35,12 @@ export const todosReducer = createReducer(initialState.todos, {
   [fetchTodosSuccess]: (state, action) => {
     state.loading = false;
     state.items = [...state.items, ...action.payload];
+  },
+  [toggleTodos]: (state, action) => {
+    state.items = state.items.map((t) => ({ ...t, completed: action.payload }))
+  },
+  [deleteTodo]: (state, action) => {
+    state.items = state.items.filter((t) => t.id !== action.payload.id)
   },
 });
 
