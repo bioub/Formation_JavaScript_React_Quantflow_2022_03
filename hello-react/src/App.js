@@ -29,7 +29,7 @@ function App() {
       <CounterHooks />
       <Helloworld />
       <HelloworldHooks />
-      <MultiStateButton items={['Toto', 'Titi', 'Tata']} selected={name} onSelected={setName} />
+      <MultiStateButton items={['Toto', 'Titi', 'Tata']} selected={name} onSelected={(name) => setName(name)} />
       <MultiStateButton items={['Toto', 'Titi', 'Tata']} selected={name} onSelected={setName} />
       <MultiStateButton items={['Toto', 'Titi', 'Tata']} selected={name} onSelected={setName} />
       <Select items={['Toto', 'Titi', 'Tata']} selected={name} onSelected={setName} />

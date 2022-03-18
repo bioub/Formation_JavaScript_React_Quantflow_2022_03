@@ -25,11 +25,13 @@ import { useState } from "react";
 // export default Counter;
 
 /*
+Sous forme de classe
 {
   nbClicks: 0,
   name: 'Toto',
 }
 
+Avec useState
 [
   0,
   'Toto',
@@ -41,7 +43,8 @@ function CounterHooks() {
   // const [name, setName] = useState('Toto'); // 'Toto'
 
   function handleClick() {
-    setNbClicks(nbClicks + 1);
+    // setNbClicks(nbClicks + 1);
+    setNbClicks((nb) => nb + 1);
   }
 
   return (

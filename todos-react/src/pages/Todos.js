@@ -10,27 +10,21 @@ function Todos() {
   ]);
 
   const [newTodo, setNewTodo] = useState('');
-  const requestSentRef = useRef(false);
 
   useEffect(() => {
-    if (requestSentRef.current) {
-      return;
-    }
-
-    requestSentRef.current = true;
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then((res) => res.json())
       .then((todosFromServer) => {
-        setTodos([...todos, ...todosFromServer]);
+        setTodos((actualTodos) => [...actualTodos, ...todosFromServer]);
       });
-  }, [todos]);
+  }, []);
 
   function handleAdd(value) {
     setTodos([{ id: Math.random(), title: value, completed: false }, ...todos]);
   }
 
   function handleToggle(checked) {
-    setTodos(todos.map((t) => ({...t, completed: checked})));
+    setTodos(todos.map((t) => ({ ...t, completed: checked })));
   }
 
   function handleDelete(todo) {
